@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "329631839070",
+    "project_id": "carbonmongol-193ab",
+    "storage_bucket": "carbonmongol-193ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329631839070:android:a1a92f50e761131ed295cf",
+        "android_client_info": {
+          "package_name": "com.example.carbonmongol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHQDQJ1xSX-PvFYZAeF2L10LrpPdbcIqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
