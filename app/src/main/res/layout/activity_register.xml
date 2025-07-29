@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/register_used"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/register"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColorHint="#546E7A" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            app:endIconMode="password_toggle"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pwd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:textColorHint="#546E7A" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/click_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/click_to_login"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@color/colorTextSecondary"
+            android:text="@string/register"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</ScrollView>
