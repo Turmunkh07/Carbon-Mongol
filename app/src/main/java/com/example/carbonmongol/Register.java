@@ -34,6 +34,7 @@ public class Register extends AppCompatActivity {
         clickToLogin = findViewById(R.id.click_to_login);
         mAuth = FirebaseAuth.getInstance();
 
+        btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.ashGray));
 
         clickToLogin.setOnClickListener(v -> Register.this.goToPage(Login.class));
 
@@ -43,36 +44,14 @@ public class Register extends AppCompatActivity {
             pwd = String.valueOf(editPwd.getText());
             pwd2 = String.valueOf(editPwd2.getText());
 
-            if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(pwd)) {
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorPrimary));
+            if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pwd) && TextUtils.equals(pwd, pwd2)){
+                Toast.makeText(Register.this, "Бүх хэсгийг бөглөнө үү", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+                return;
             } else {
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
+                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.teaBrown));
             }
 
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(Register.this, "Enter your Email", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
-                return;
-            }
-            if (TextUtils.isEmpty(pwd)) {
-                Toast.makeText(Register.this, "Enter your Password", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
-                return;
-            }
-            if (TextUtils.isEmpty(pwd2)) {
-                Toast.makeText(Register.this, "Confirm your password", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
-                return;
-            }
-            if (!TextUtils.equals(pwd, pwd2)) {
-                Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
-                return;
-            }
 
             mAuth.createUserWithEmailAndPassword(email, pwd)
                     .addOnCompleteListener(task -> {
@@ -84,7 +63,7 @@ public class Register extends AppCompatActivity {
                             } else {
                                 Toast.makeText(Register.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.colorTextSecondary));
+                                btn.setBackgroundColor(ContextCompat.getColor(Register.this, R.color.ashGray));
                             }
                         }
                     });

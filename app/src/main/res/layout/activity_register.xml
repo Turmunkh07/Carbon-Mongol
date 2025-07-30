@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Progress bar with step label -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="8dp"
+            android:max="5"
+            android:progress="2"
+            android:progressTint="@color/matchaGreen"/>
+
+        <TextView
+            android:id="@+id/stepText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step 2 of 5"
+            android:paddingStart="12dp"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:overScrollMode="never"
+    android:layout_gravity="center"
     android:scrollbars="none"
+    android:background="@color/matchaGreen"
     tools:context=".Register">
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_marginTop="@dimen/round_bg_top_margin"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/bg_layout">
 
-        <ImageView
+            <ImageView
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:layout_marginTop="80dp"
@@ -22,16 +62,16 @@
             android:src="@drawable/register_used"
             tools:ignore="ImageContrastCheck" />
 
-        <TextView
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/register"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@color/matchaGreen"
             android:textSize="26sp"
             android:textStyle="bold"/>
 
-        <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -47,7 +87,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:endIconMode="password_toggle"
@@ -65,7 +105,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -83,29 +123,28 @@
                 android:textColorHint="#546E7A" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+            <TextView
             android:id="@+id/click_to_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/click_to_login"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@color/matchaGreen"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-        <Button
+            <Button
             android:id="@+id/register_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_button"
-            android:backgroundTint="@color/colorTextSecondary"
             android:text="@string/register"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/matchaBeige"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
-        <ProgressBar
+            <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,3 +153,4 @@
     </LinearLayout>
 
 </ScrollView>
+</LinearLayout>

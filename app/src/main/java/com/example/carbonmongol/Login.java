@@ -37,30 +37,20 @@ public class Login extends AppCompatActivity {
 
         clickToRegister.setOnClickListener(v -> Login.this.goToPage(Register.class));
 
+        btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.ashGray));
+
         btn.setOnClickListener(v -> {
             progressBar.setVisibility(View.VISIBLE);
             String email, pwd;
             email = String.valueOf(editEmail.getText());
             pwd = String.valueOf(editPwd.getText());
 
-            if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(pwd)) {
-                btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.colorPrimary));
+            if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pwd)){
+                Toast.makeText(Login.this, "Бүх хэсгийг бөглөнө үү", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+                return;
             } else {
-                btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.colorTextSecondary));
-            }
-
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(Login.this, "Enter your Email", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.colorTextSecondary));
-                return;
-            }
-
-            if (TextUtils.isEmpty(pwd)) {
-                Toast.makeText(Login.this, "Enter your Password", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
-                btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.colorTextSecondary));
-                return;
+                btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.teaBrown));
             }
 
             mAuth.signInWithEmailAndPassword(email, pwd)
@@ -73,7 +63,7 @@ public class Login extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.colorTextSecondary));
+                            btn.setBackgroundColor(ContextCompat.getColor(Login.this, R.color.ashGray));
                         }
                     });
         });

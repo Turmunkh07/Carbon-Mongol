@@ -12,4 +12,12 @@
     <string name="click_to_login">Click to login</string>
     <string name="confirm_password">Confirm password</string>
     <string name="sign_out">Sign out</string>
+    <string name="calculate">Calculate</string>
+    <string name="energy">Эрчим хүч</string>
+    <string name="transportation">Тээвэр</string>
+    <string name="waste">Хаягдал</string>
+    <string name="consumption">Хэрэглээ</string>
+    <string name="walked_or_biked">Алхсан/Дугуй унасан</string>
+    <string name="bus_ride">Автобус\n</string>
+    <string name="ac_used_time">AC ашигласан цаг</string>
 </resources>
